@@ -1,38 +1,38 @@
 # Visualization-R
-   Visalization_project.R
-   irinamahmudjanova
-   Mon Jan 16 21:41:05 2017
-
+   ####Visualization_project.R
+   ####irinamahmudjanova
+   #### Mon Jan 16 21:41:05 2017
+ 
      library(ggplot2)
      library(ggthemes)
-    library(data.table)
+     library(data.table)
 
     ## Import the ggplot2 data.table libraries and use fread to load the csv file 
     ## 'Economist_Assignment_Data.csv' into a dataframe called df (Hint: use drop=1 to skip the first column)
     dc <- read.csv("/Users/irinamahmudjanova/Documents/STUDY/DATA_SCIENCE/R_Udemy/R_Udemy/Economist_Assignment_Data.csv", header = TRUE,                         sep = ',', stringsAsFactors = TRUE)  
-dc[ ,1  ] <- NULL
-## or we can do second way
-dc <- fread("Economist_Assignment_Data.csv", drop=1)
-## Check the head of dataframe dc
-##dc %>% head
+    dc[ ,1  ] <- NULL
+    ## or we can do second way
+    dc <- fread("Economist_Assignment_Data.csv", drop=1)
+    ## Check the head of dataframe dc
+    ##dc %>% head
 
-## Use ggplot() + geom_point() to create a scatter plot object called pl. 
-## You will need to specify x=CPI and y=HDI and color=Region as aesthetics
-pl <- ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point()
-print(pl)
-
-
-## the same plot we can get if we use color in geom_point
-pl <- ggplot(dc, aes(x=CPI, y=HDI)) + geom_point(aes( color=factor(Region)))
-pl
+    ## Use ggplot() + geom_point() to create a scatter plot object called pl. 
+    ## You will need to specify x=CPI and y=HDI and color=Region as aesthetics
+    pl <- ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point()
+    print(pl)
 
 
-pl1 <- pl + geom_point(aes(x=CPI,  y=HDI, color= factor(Region), size = CPI))
-pl1
+    ## the same plot we can get if we use color in geom_point
+    pl <- ggplot(dc, aes(x=CPI, y=HDI)) + geom_point(aes( color=factor(Region)))
+    pl
 
 
-## Change the points to be larger empty circles. (You'll have to go back and add 
-## arguments to geom_point() and reassign it to pl.) You'll need to figure out what shape= and size=
+    pl1 <- pl + geom_point(aes(x=CPI,  y=HDI, color= factor(Region), size = CPI))
+    pl1
+
+
+    ## Change the points to be larger empty circles. (You'll have to go back and add 
+    ## arguments to geom_point() and reassign it to pl.) You'll need to figure out what shape= and size=
 
 pl2<-ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point(size =3.5, shape=1)
 pl2
