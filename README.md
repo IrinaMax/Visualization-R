@@ -1,16 +1,15 @@
 # Visualization-R
-Visalization_project.R
-irinamahmudjanova
+   Visalization_project.R
+   irinamahmudjanova
+   Mon Jan 16 21:41:05 2017
 
-Mon Jan 16 21:41:05 2017
+     library(ggplot2)
+     library(ggthemes)
+    library(data.table)
 
-library(ggplot2)
-library(ggthemes)
-library(data.table)
-
-## Import the ggplot2 data.table libraries and use fread to load the csv file 
-## 'Economist_Assignment_Data.csv' into a dataframe called df (Hint: use drop=1 to skip the first column)
-dc <- read.csv("/Users/irinamahmudjanova/Documents/STUDY/DATA_SCIENCE/R_Udemy/R_Udemy/Economist_Assignment_Data.csv", header = TRUE, sep = ',', stringsAsFactors = TRUE)  
+    ## Import the ggplot2 data.table libraries and use fread to load the csv file 
+    ## 'Economist_Assignment_Data.csv' into a dataframe called df (Hint: use drop=1 to skip the first column)
+    dc <- read.csv("/Users/irinamahmudjanova/Documents/STUDY/DATA_SCIENCE/R_Udemy/R_Udemy/Economist_Assignment_Data.csv", header = TRUE,                         sep = ',', stringsAsFactors = TRUE)  
 dc[ ,1  ] <- NULL
 ## or we can do second way
 dc <- fread("Economist_Assignment_Data.csv", drop=1)
