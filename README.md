@@ -69,26 +69,25 @@ want to label!
 
     pl7
 
-
-## Almost there! Still not perfect, but good enough for this assignment.
-## Later on we'll see why interactive plots are better for labeling. Now let's 
-## just add some labels and a theme, set the x and y scales and we're done!
-## Add theme_bw() to your plot and save this to pl7
-pl7 <- pl7+theme_bw()
-pl7
-
-
- pl7 <- pl7 + scale_x_continuous(name = "Corruption Perception Index, 2011, (10=least corrupt)", breaks = 1:10)
-pl7
+Almost there! Still not perfect, but good enough for this assignment.
+Later on we'll see why interactive plots are better for labeling. Now let's 
+just add some labels and a theme, set the x and y scales and we're done!
+Add theme_bw() to your plot and save this to pl7
+    
+    pl7 <- pl7+theme_bw()
+    pl7
 
 
-pl7 <- pl7 + scale_y_continuous(name = "Human Development Business, 2011 (1=Best)", breaks = 1:10)
-pl7
+    pl7 <- pl7 + scale_x_continuous(name = "Corruption Perception Index, 2011, (10=least corrupt)", breaks = 1:10)
+    pl7
 
 
-##Finally use ggtitle() to add a string as a title.
-pl7 <- pl7 + ggtitle("Corruption and Human Development")
-pl7
+    pl7 <- pl7 + scale_y_continuous(name = "Human Development Business, 2011 (1=Best)", breaks = 1:10)
+    pl7
 
-
-## END
+Finally use ggtitle() to add a string as a title.
+ 
+    pl7 <- pl7 + ggtitle("Corruption and Human Development")
+    pl7
+    
+    #end
