@@ -1,8 +1,8 @@
 # Visualization-R
-   ####Visualization_project.R
-   ####irinamahmudjanova
-   #### Mon Jan 16 21:41:05 2017
-   #### The interest of the script is how to make plot as in "Economist" using the ggplot2 in R.
+####Visualization_project.R
+####irinamahmudjanova
+#### Mon Jan 16 21:41:05 2017
+#### The interest of the script is how to make plot as in "Economist" using the ggplot2 in R.
  
      library(ggplot2)
      library(ggthemes)
@@ -31,44 +31,43 @@
     pl1 <- pl + geom_point(aes(x=CPI,  y=HDI, color= factor(Region), size = CPI))
     pl1
 
+ Change the points to be larger empty circles. (You'll have to go back and add arguments to geom_point() and reassign it to pl.) You'll need to figure out what shape= and size=
 
-    ## Change the points to be larger empty circles. (You'll have to go back and add 
-    ## arguments to geom_point() and reassign it to pl.) You'll need to figure out what shape= and size=
-
-pl2<-ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point(size =3.5, shape=1)
-pl2
+     pl2<-ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point(size =3.5, shape=1)
+     pl2
 
 
-pl3 <- pl2+geom_smooth(aes(group=1))
-pl3
+     pl3 <- pl2+geom_smooth(aes(group=1))
+     pl3
+
+we can remove use se=F the gray area and using method linear reg make log line
+     
+     pl4 <-pl2 + geom_smooth(aes(group=1), method = 'lm', formula=y~log(x), se=F, color='red')
+     pl4
 
 
-## we can remove use se=F the gray area and using method linear reg make log line
-pl4 <-pl2 + geom_smooth(aes(group=1), method = 'lm', formula=y~log(x), se=F, color='red')
-pl4
+It's really starting to look similar! But we still need to add labels, we can 
+use geom_text! Add geom_text(aes(label=Country)) to pl4 and see what happens. 
+Let's take shrink labels, there are way too many of them.
+
+    pl6 <- pl4 + geom_text(aes(label= Region))
+    pl6
 
 
-## It's really starting to look similar! But we still need to add labels, we can 
-## use geom_text! Add geom_text(aes(label=Country)) to pl4 and see what happens. 
-## (Hint: It should be way too many labels)
-pl6 <- pl4 + geom_text(aes(label= Region))
-pl6
+Labeling a subset is actually pretty tricky! So we're just going to give you the
+answer since it would require manually selecting the subset of countries we 
+want to label!
 
-
-##Labeling a subset is actually pretty tricky! So we're just going to give you the
-## answer since it would require manually selecting the subset of countries we 
-## want to label!
-
-pointsToLabel <- c("Russia", "Venezuela", "Iraq", "Myanmar", "Sudan",
-                   "Afghanistan", "Congo", "Greece", "Argentina", "Brazil","Morocco",
-                   "India", "Italy", "China", "South Africa", "Spane", "Poland",
-                   "Botswana", "Kazakhstan", "Rwanda", "France","Switzerland","Romania",
-                   "United States", "Germany", "Britain", "Barbados", "Norway", "Japan",
-                   "New Zealand", "Singapore", "Uzbekistan", "Kyrgyzstan","Turkey")
-pl7 <- pl4 + geom_text(aes(label = Country), color = "gray20", 
+      pointsToLabel <- c("Russia", "Venezuela", "Iraq", "Myanmar", "Sudan",
+                      "Afghanistan", "Congo", "Greece", "Argentina", "Brazil","Morocco",
+                      "India", "Italy", "China", "South Africa", "Spane", "Poland",
+                      "Botswana", "Kazakhstan", "Rwanda", "France","Switzerland","Romania",
+                      "United States", "Germany", "Britain", "Barbados", "Norway", "Japan",
+                      "New Zealand", "Singapore", "Uzbekistan", "Kyrgyzstan","Turkey")
+     pl7 <- pl4 + geom_text(aes(label = Country), color = "gray20", 
                        data = subset(dc, Country %in% pointsToLabel),check_overlap = TRUE)
 
-pl7
+    pl7
 
 
 ## Almost there! Still not perfect, but good enough for this assignment.
