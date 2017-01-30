@@ -3,6 +3,7 @@
 ####irinamahmudjanova
 #### Mon Jan 16 21:41:05 2017
 #### The interest of the script is how to make plot as in "Economist" using the ggplot2 in R.
+![economist1](https://cloud.githubusercontent.com/assets/16123495/22446702/db68941e-e702-11e6-861b-8624e58a8483.png)
  
      library(ggplot2)
      library(ggthemes)
