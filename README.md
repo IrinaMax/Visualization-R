@@ -23,13 +23,13 @@
     ## You will need to specify x=CPI and y=HDI and color=Region as aesthetics
     pl <- ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point()
     print(pl)
-
-
-    ## the same plot we can get if we use color in geom_point
+![pl1_vis](https://cloud.githubusercontent.com/assets/16123495/22487231/6e04ac72-e7c1-11e6-95b9-7e1686333166.png)
+ 
+#### the same plot we can get if we use color in geom_point
     pl <- ggplot(dc, aes(x=CPI, y=HDI)) + geom_point(aes( color=factor(Region)))
     pl
-
-
+   
+    ## we can perform the same plot chenging the size of CPI but we dont need it right now
     pl1 <- pl + geom_point(aes(x=CPI,  y=HDI, color= factor(Region), size = CPI))
     pl1
 
