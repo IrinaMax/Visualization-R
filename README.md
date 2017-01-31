@@ -29,11 +29,11 @@
     pl <- ggplot(dc, aes(x=CPI, y=HDI)) + geom_point(aes( color=factor(Region)))
     pl
    
-    ## we can perform the same plot chenging the size of CPI but we dont need it right now
+    ## we can perform the same plot changing the size of CPI but we dont need it right now
     pl1 <- pl + geom_point(aes(x=CPI,  y=HDI, color= factor(Region), size = CPI))
     pl1
 
- Change the points to be larger empty circles. (You'll have to go back and add arguments to geom_point() and reassign it to pl.) You'll need to figure out what shape= and size=
+ We should change the points to be larger empty circles. Let's go back and add arguments to geom_point() and reassign it to pl and try to to figure out what shape and size
 
      pl2<-ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point(size =3.5, shape=1)
      pl2
@@ -76,20 +76,20 @@ Later on we'll see why interactive plots are better for labeling. Now let's
 just add some labels and a theme, set the x and y scales and we're done!
 Add theme_bw() to your plot and save this to pl7
     
-    pl7 <- pl7+theme_bw()
-    pl7
+    pl8 <- pl7+theme_bw()
+    pl8
 
 
-    pl7 <- pl7 + scale_x_continuous(name = "Corruption Perception Index, 2011, (10=least corrupt)", breaks = 1:10)
-    pl7
+    pl9 <- pl8 + scale_x_continuous(name = "Corruption Perception Index, 2011, (10=least corrupt)", breaks = 1:10)
+    pl9
 
 
-    pl7 <- pl7 + scale_y_continuous(name = "Human Development Business, 2011 (1=Best)", breaks = 1:10)
-    pl7
+    pl9 <- pl9 + scale_y_continuous(name = "Human Development Business, 2011 (1=Best)", breaks = 1:10)
+    pl9
 
 Finally use ggtitle() to add a string as a title.
  
-    pl7 <- pl7 + ggtitle("Corruption and Human Development")
-    pl7
+    pl10 <- pl9 + ggtitle("Corruption and Human Development")
+    pl10
     
     #end
