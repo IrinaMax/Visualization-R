@@ -38,16 +38,16 @@
 
      pl2<-ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point(size =3.5, shape=1)
      pl2
-
+![pl2_vis](https://cloud.githubusercontent.com/assets/16123495/22528358/c947e3c6-e887-11e6-9a82-85fce9df6c04.png)
 
      pl3 <- pl2+geom_smooth(aes(group=1))
      pl3
-
+![pl3_vis](https://cloud.githubusercontent.com/assets/16123495/22528542/a4cd8aea-e888-11e6-98fa-59e4a74d4b46.png)
 we can remove use se=F the gray area and using method linear reg make log line
      
      pl4 <-pl2 + geom_smooth(aes(group=1), method = 'lm', formula=y~log(x), se=F, color='red')
      pl4
-
+![pl4_vis](https://cloud.githubusercontent.com/assets/16123495/22528360/cd3f3bf0-e887-11e6-9918-5d28f00dd456.png)
 
 It's really starting to look similar! But we still need to add labels, we can 
 use geom_text! Add geom_text(aes(label=Country)) to pl4 and see what happens. 
