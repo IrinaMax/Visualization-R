@@ -29,10 +29,11 @@
     pl <- ggplot(dc, aes(x=CPI, y=HDI)) + geom_point(aes( color=factor(Region)))
     pl
    
-    ## we can perform the same plot changing the size of CPI but we dont need it right now
+#### we can perform as shown down the same plot changing the size of CPI but we dont need it right now
     pl1 <- pl + geom_point(aes(x=CPI,  y=HDI, color= factor(Region), size = CPI))
     pl1
-
+![pl1_1_vis](https://cloud.githubusercontent.com/assets/16123495/22528352/c6e7df3c-e887-11e6-924c-9f7a3d06889a.png)
+ 
  We should change the points to be larger empty circles. Let's go back and add arguments to geom_point() and reassign it to pl and try to to figure out what shape and size
 
      pl2<-ggplot(dc, aes(x=CPI, y=HDI, color=Region)) + geom_point(size =3.5, shape=1)
