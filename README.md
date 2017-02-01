@@ -12,10 +12,10 @@
 
     ## Import the ggplot2 data.table libraries and use fread to load the csv file 
     ## 'Economist_Assignment_Data.csv' into a dataframe called df (Hint: use drop=1 to skip the first column)
-    dc <- read.csv("Economist_Assignment_Data.csv", header = TRUE, sep = ',', stringsAsFactors = TRUE)  
+    dc <- read.csv("Economist_Data.csv", header = TRUE, sep = ',', stringsAsFactors = TRUE)  
     dc[ ,1  ] <- NULL
-    ## or we can do second way
-    dc <- fread("Economist_Assignment_Data.csv", drop=1)
+    ## or we can do second way where we will read the data without the first colomn
+    dc <- fread("Economist_Data.csv", drop=1)
     ## Check the head of dataframe dc
     ##dc %>% head
 
@@ -92,5 +92,6 @@ Finally use ggtitle() to add a string as a title.
  
     pl10 <- pl9 + ggtitle("Corruption and Human Development")
     pl10
-    
+ ![pl10_vis](https://cloud.githubusercontent.com/assets/16123495/22528398/ef933986-e887-11e6-9a11-2832dc6ea703.png)
+   Of coerse this plot now absolute copy of posted in The Economist, but it's almost copy and you always can find out how improve any plot in R using wonderful packege ggplot2 :) 
     #end
