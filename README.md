@@ -69,8 +69,9 @@ want to label!
                       "New Zealand", "Singapore", "Uzbekistan", "Kyrgyzstan","Turkey")
      pl7 <- pl4 + geom_text(aes(label = Country), color = "gray20", 
                        data = subset(dc, Country %in% pointsToLabel),check_overlap = TRUE)
-
     pl7
+    
+![pl7_vis](https://cloud.githubusercontent.com/assets/16123495/22528372/db6c5924-e887-11e6-9714-993d20ec69cf.png)
 
 Almost there! Still not perfect, but good enough :)
 Now let's just add some labels and a theme, set the x and y scales and we're done!
