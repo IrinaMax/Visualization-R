@@ -55,7 +55,7 @@ Let's take shrink labels, there are way too many of them.
 
     pl6 <- pl4 + geom_text(aes(label= Region))
     pl6
-
+![pl6_vis](https://cloud.githubusercontent.com/assets/16123495/22528365/d18bbd5a-e887-11e6-8b0a-9ad9ed9388b2.png)
 
 Labeling a subset is actually pretty tricky! So we're just going to give you the
 answer since it would require manually selecting the subset of countries we 
